@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jupally Manudeep Rao – AI &amp; Full-Stack Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090D;--bg2:#0E1017;--card:#12151E;--ink:#ECEEF5;--muted:#9097AB;--line:#222735;
+  --accent:#8B8CFF;--accent2:#4DD6E8;--ok:#4ADE80;--soft:rgba(139,140,255,.14);
+  --head:"Sora","Segoe UI",system-ui,sans-serif;--body:"Inter","Segoe UI",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:dark;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(8,9,13,.92);z-index:30}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.12;letter-spacing:-.03em}
+p{margin:0 0 .8rem;max-width:68ch}
+.muted{color:var(--muted)}
+.kicker{font:500 .9rem var(--mono);color:var(--accent2);margin-bottom:.6rem;display:block}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(8,9,13,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:62px}
+.logo{font:800 1.1rem var(--head);text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav li a{text-decoration:none;color:var(--muted);font-size:.93rem;font-weight:500}
+nav li a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:10px;border:1px solid var(--line);background:var(--card);text-decoration:none;font-weight:600;font-size:.95rem}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#0B0C14}
+.btn.primary:hover{filter:brightness(1.1)}
+nav .btn{padding:.5rem .95rem}
+
+.hero{position:relative;overflow:hidden;padding:4.5rem 0 3.5rem}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 70% at 90% 0%,rgba(139,140,255,.22),transparent 65%),radial-gradient(40% 50% at 0% 100%,rgba(77,214,232,.12),transparent 65%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center}
+.status{display:inline-flex;gap:.55rem;align-items:center;border:1px solid var(--line);background:var(--bg2);border-radius:99px;padding:.3rem .9rem;font-size:.86rem;color:var(--muted);margin-bottom:1.3rem}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.hero h1{font-size:clamp(2.5rem,6.5vw,4.4rem);font-weight:800}
+.hero .role{font:700 1.4rem var(--head);color:var(--accent);margin:.9rem 0 1rem}
+.cursor{display:inline-block;width:.55ch;background:var(--accent2);margin-left:.2rem;animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+.links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.stats b{display:block;font:800 1.9rem var(--head);letter-spacing:-.03em}
+.stats span{color:var(--muted);font-size:.88rem}
+.id-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.6rem;text-align:center}
+.mono-av{width:112px;height:112px;margin:0 auto 1rem;border-radius:50%;display:grid;place-items:center;font:800 2.4rem var(--head);background:linear-gradient(135deg,#6366F1,#06B6D4);color:#fff}
+.id-card h2{font-size:1.2rem}
+.id-card p{margin:.2rem auto 1rem;color:var(--muted);font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.chip{background:var(--soft);border:1px solid rgba(139,140,255,.25);border-radius:7px;padding:.18rem .6rem;font-size:.82rem;font-weight:500}
+.left{justify-content:flex-start}
+
+section{padding:4.5rem 0 0}
+section h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;max-width:24ch;margin-bottom:1rem}
+.lede{color:var(--muted);max-width:62ch;margin-bottom:1.8rem}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:start}
+pre{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem;font:.88rem/1.7 var(--mono);overflow-x:auto;color:#C7CBE0}
+pre .c{color:#6B7390}pre .k{color:var(--accent2)}pre .s{color:#A5F3B5}
+.path{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:1.2rem;font-size:.9rem}
+.path span{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:.25rem .7rem}
+.path em{color:var(--accent2);font-style:normal}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem}
+.pillar h3{font-size:1.02rem;margin-bottom:.4rem}
+.pillar p{margin:0;color:var(--muted);font-size:.93rem}
+
+/* work */
+.proj{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.8rem;margin-bottom:1.3rem}
+.proj header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;align-items:baseline;margin-bottom:.5rem}
+.proj h3{font-size:1.5rem}
+.tag{font:600 .78rem var(--mono);border-radius:6px;padding:.2rem .55rem;border:1px solid var(--line);color:var(--muted)}
+.tag.flag{color:var(--accent);border-color:rgba(139,140,255,.4)}
+.proj .tl{color:var(--muted);margin-bottom:1.2rem}
+.pipe{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin:0 0 1.3rem;font-size:.85rem}
+.pipe b{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:.25rem .65rem;font-weight:600}
+.pipe i{color:var(--accent2);font-style:normal}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cols h4{font:600 .8rem var(--mono);color:var(--accent2);margin:0 0 .5rem}
+.cols p,.cols li{color:#C5CADB;font-size:.95rem}
+.cols ul{list-style:none;margin:0;padding:0}
+.cols li{position:relative;padding-left:1.4rem;margin-bottom:.4rem}
+.cols li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.proj .chips{margin-top:1.3rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem}
+.skill h3{font-size:1rem;margin-bottom:.8rem}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.cert{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:1rem 1.2rem}
+.cert b{display:block;font-weight:600}
+.cert span{color:var(--muted);font-size:.9rem}
+
+/* journey */
+.tline{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--line);max-width:760px}
+.tline li{position:relative;padding-bottom:1.5rem}
+.tline li::before{content:"";position:absolute;left:calc(-1.5rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tline small{font:500 .82rem var(--mono);color:var(--accent2)}
+.tline h3{font-size:1.1rem;margin:.15rem 0}
+.tline p{margin:0;color:var(--muted);font-size:.94rem}
+
+/* contact */
+.contact{margin-top:4.5rem;border:1px solid var(--line);border-radius:24px;padding:3rem 2rem;text-align:center;background:radial-gradient(60% 100% at 50% 0%,rgba(139,140,255,.18),transparent 70%),var(--card)}
+.contact h2{margin:0 auto 1rem}
+.contact p{margin:0 auto 1.6rem;color:var(--muted)}
+.contact .links{justify-content:center;margin:0}
+footer{text-align:center;color:var(--muted);font-size:.88rem;padding:2.2rem 0 2.6rem}
+
+@media (max-width:860px){
+  nav ul{display:none}
+  .hero .wrap,.about,.cols,.skills,.certs,.pillars{grid-template-columns:1fr}
+  .hero{padding-top:2.5rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Manudeep</a>
+  <ul><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#skills">Skills</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact">Contact</a></li></ul>
+  <a class="btn" href="#contact">Get in touch</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="status"><i></i>Open to internships. Hyderabad, IN</span>
+    <h1>Jupally Manudeep Rao</h1>
+    <div class="role">AI &amp; Full-Stack Engineering<span class="cursor">&nbsp;</span></div>
+    <p class="muted">Third-year B.Tech CSE student at the Institute of Aeronautical Engineering, Hyderabad. I build AI agents, resume intelligence and the full-stack products around them.</p>
+    <div class="links">
+      <a class="btn primary" href="#work">View work</a>
+      <a class="btn" href="https://github.com/Manudeeprao" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/manudeep-jupally-b12617292/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div><b>8.73</b><span>CGPA</span></div>
+      <div><b>3</b><span>Projects</span></div>
+      <div><b>4</b><span>Certifications</span></div>
+      <div><b>2027</b><span>Graduating</span></div>
+    </div>
+  </div>
+  <aside class="id-card" aria-label="Quick profile">
+    <div class="mono-av" aria-hidden="true">JM</div>
+    <h2>Live stack</h2>
+    <p>What I reach for most</p>
+    <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">Spring Boot</span><span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">RAG</span><span class="chip">Supabase</span><span class="chip">MySQL</span><span class="chip">Docker</span><span class="chip">AWS</span></div>
+  </aside>
+</div></header>
+
+<main class="wrap">
+<section id="about">
+  <span class="kicker">About</span>
+  <h2>I build AI products people can actually use.</h2>
+  <div class="about">
+    <div>
+      <p>I’m a third-year B.Tech student in Computer Science and Engineering at the Institute of Aeronautical Engineering, Hyderabad. My focus is where generative AI meets practical software engineering.</p>
+      <p>Most of my work turns a model’s output into something a person can act on: an interview coach that follows up on your answers, or a matcher that tells you which skills a job needs and you lack. That means APIs, data layers, dashboards and the workflow that ties them together.</p>
+      <div class="path"><span>Fundamentals</span><em>→</em><span>Full-stack</span><em>→</em><span>Generative AI</span><em>→</em><span>AI agents</span></div>
+    </div>
+<pre><span class="c"># focus.py</span>
+<span class="k">focus</span> = [<span class="s">"ai_agents"</span>, <span class="s">"resume_intelligence"</span>,
+         <span class="s">"full_stack"</span>]
+<span class="k">fundamentals</span> = [<span class="s">"dsa"</span>, <span class="s">"dbms"</span>, <span class="s">"os"</span>,
+                <span class="s">"networks"</span>]
+<span class="k">latest_build</span> = <span class="s">"interview_practice_partner"</span>
+<span class="k">looking_for</span> = <span class="s">"internship"</span>  <span class="c"># SWE / AI</span></pre>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><h3>Agentic workflows</h3><p>Stateful LangGraph agents with evaluation and contextual follow-ups.</p></div>
+    <div class="pillar"><h3>Recruitment tech</h3><p>Resume parsing, skill extraction and semantic job matching.</p></div>
+    <div class="pillar"><h3>Full-stack delivery</h3><p>React frontends on FastAPI and Spring Boot backends with secure REST APIs.</p></div>
+    <div class="pillar"><h3>Cloud and DevOps</h3><p>AWS fundamentals, Docker and Docker Compose, Jenkins and Git.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <span class="kicker">Selected work</span>
+  <h2>Three projects, from product to agent.</h2>
+  <p class="lede">Each project below covers the problem, how I approached it and what I built.</p>
+
+  <article class="proj">
+    <header><h3>AI-Powered Job Matching Platform</h3><span class="tag flag">Flagship · Feb 2026</span></header>
+    <p class="tl">Personalized job recommendations from a candidate’s resume.</p>
+    <div class="pipe"><b>Resume</b><i>→</i><b>Parse</b><i>→</i><b>Skills</b><i>→</i><b>Semantic match</b><i>→</i><b>Skill gap</b></div>
+    <div class="cols">
+      <div><h4>The problem</h4><p>Candidates can’t easily tell which jobs fit their profile or which skills they are missing for the roles they want.</p></div>
+      <div><h4>What I built</h4><ul>
+        <li>Automated resume parsing and skill extraction</li>
+        <li>Semantic job matching to improve recommendation relevance</li>
+        <li>Skill-gap analysis with personalized recommendations</li>
+        <li>Full-stack app on React.js, FastAPI and Supabase</li></ul></div>
+    </div>
+    <div class="chips left"><span class="chip">React.js</span><span class="chip">FastAPI</span><span class="chip">Supabase</span><span class="chip">Semantic search</span></div>
+  </article>
+
+  <article class="proj">
+    <header><h3>Interview Practice Partner</h3><span class="tag flag">Agentic AI · June 2026</span></header>
+    <p class="tl">An AI mock interview platform with text and voice interviews.</p>
+    <div class="pipe"><b>Question</b><i>→</i><b>Answer</b><i>→</i><b>Evaluate</b><i>→</i><b>Follow-up</b><i>→</i><b>Feedback</b></div>
+    <div class="cols">
+      <div><h4>The approach</h4><p>A stateful agent workflow keeps the interview’s context, so each follow-up question builds on what the candidate just said.</p></div>
+      <div><h4>What I built</h4><ul>
+        <li>Role-specific text and voice interviews</li>
+        <li>LangGraph workflow for question generation and answer evaluation</li>
+        <li>Contextual follow-ups and performance feedback</li>
+        <li>Groq-hosted LLMs behind a JavaScript frontend</li></ul></div>
+    </div>
+    <div class="chips left"><span class="chip">Python</span><span class="chip">LangGraph</span><span class="chip">Groq LLMs</span><span class="chip">JavaScript</span></div>
+  </article>
+
+  <article class="proj">
+    <header><h3>Expense Tracker</h3><span class="tag">Full-stack · Dec 2025</span></header>
+    <p class="tl">Expense, budget and analytics management in one dashboard.</p>
+    <div class="pipe"><b>Auth (JWT)</b><i>→</i><b>Expenses</b><i>→</i><b>Budgets</b><i>→</i><b>Analytics</b><i>→</i><b>PDF report</b></div>
+    <div class="cols">
+      <div><h4>The approach</h4><p>A Spring Boot REST backend secured with JWT, a React dashboard on top, and Docker Compose so the whole stack starts the same way everywhere.</p></div>
+      <div><h4>What I built</h4><ul>
+        <li>JWT-secured REST APIs</li>
+        <li>Expense and category management with budget tracking</li>
+        <li>Monthly analytics in a responsive dashboard</li>
+        <li>PDF report generation and Docker Compose deployment</li></ul></div>
+    </div>
+    <div class="chips left"><span class="chip">Spring Boot</span><span class="chip">React.js</span><span class="chip">MySQL</span><span class="chip">Docker</span></div>
+  </article>
+</section>
+
+<section id="skills">
+  <span class="kicker">Technical stack</span>
+  <h2>Tools I actually reach for.</h2>
+  <div class="skills">
+    <div class="skill"><h3>Languages</h3><div class="chips left"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript</span></div></div>
+    <div class="skill"><h3>AI and GenAI</h3><div class="chips left"><span class="chip">Generative AI</span><span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">LLMs</span></div></div>
+    <div class="skill"><h3>Backend</h3><div class="chips left"><span class="chip">FastAPI</span><span class="chip">Spring Boot</span><span class="chip">REST APIs</span><span class="chip">JWT</span></div></div>
+    <div class="skill"><h3>Frontend</h3><div class="chips left"><span class="chip">React.js</span><span class="chip">JavaScript</span></div></div>
+    <div class="skill"><h3>Databases</h3><div class="chips left"><span class="chip">MySQL</span><span class="chip">Supabase</span></div></div>
+    <div class="skill"><h3>Cloud and tools</h3><div class="chips left"><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Jenkins</span><span class="chip">Git</span></div></div>
+  </div>
+  <p class="lede" style="margin-top:1.2rem">Fundamentals run in parallel: data structures and algorithms, DBMS, operating systems and computer networks.</p>
+  <h2 style="font-size:1.4rem;margin-top:2rem">Certifications</h2>
+  <div class="certs">
+    <div class="cert"><b>Oracle Cloud Infrastructure Certified AI Agentic Foundations Associate</b><span>Aug 2026</span></div>
+    <div class="cert"><b>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</b><span>Oct 2025</span></div>
+    <div class="cert"><b>AWS Academy Cloud Foundations</b><span>Feb 2025</span></div>
+    <div class="cert"><b>Python Essentials, Cisco Networking Academy</b><span>Feb 2025</span></div>
+  </div>
+</section>
+
+<section id="journey">
+  <span class="kicker">Journey</span>
+  <h2>Education and timeline.</h2>
+  <ul class="tline">
+    <li><small>Aug 2026</small><h3>Oracle Certified AI Agentic Foundations Associate</h3><p>Formalized the agent-building work behind my interview platform.</p></li>
+    <li><small>June 2026</small><h3>Interview Practice Partner</h3><p>Built a stateful LangGraph agent workflow with text and voice interviews.</p></li>
+    <li><small>Feb 2026</small><h3>AI-Powered Job Matching Platform</h3><p>Resume parsing, semantic matching and skill-gap analysis on React and FastAPI.</p></li>
+    <li><small>Oct to Dec 2025</small><h3>Oracle Generative AI certification and Expense Tracker</h3><p>Moved from full-stack applications into generative AI.</p></li>
+    <li><small>Feb 2025</small><h3>AWS Academy virtual internship</h3><p>EC2, S3, IAM and RDS, plus secure and scalable architecture principles.</p></li>
+    <li><small>2023 to 2027</small><h3>B.Tech, Computer Science and Engineering</h3><p>Institute of Aeronautical Engineering, Hyderabad. CGPA 8.73/10.0, graduating May 2027.</p></li>
+    <li><small>June 2023</small><h3>Intermediate, Narayana Junior College</h3><p>97.8%</p></li>
+    <li><small>March 2021</small><h3>SSC, St. Joseph’s High School</h3><p>GPA 10.0/10.0</p></li>
+  </ul>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Let’s build something real.</h2>
+  <p>I’m looking for a software engineering internship in AI or full-stack, where I can work on real problems alongside experienced engineers.</p>
+  <div class="links">
+    <a class="btn primary" href="mailto:jupallymanudeep@gmail.com">jupallymanudeep@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/manudeep-jupally-b12617292/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/Manudeeprao" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+</main>
+<footer>Jupally Manudeep Rao. Hyderabad, India. +91-6303295635</footer>
+</body>
+</html>
